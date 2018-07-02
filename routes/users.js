@@ -3,7 +3,9 @@ const router = express.Router()
 const {
   register,
   login,
-  getUserProfile
+  getUserProfile,
+  fblogin,
+  getWeather
 } = require('../controllers/user.controller')
 const {
   loginCheck
@@ -12,6 +14,8 @@ const {
 router
   .post('/register', register)
   .post('/login', login)
-  .get('/get-profile/:id', loginCheck, getUserProfile)
+  .get('/get-profile/:id', getUserProfile)
+  .post('/fblogin', fblogin)
+  .get('/get-weather', getWeather)
 
-module.exports = router;
+module.exports = router
